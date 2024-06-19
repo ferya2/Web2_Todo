@@ -27,6 +27,7 @@ class UserController extends Controller
         if ($user && Hash::check($request->password, $user->password)) {
             // Buat session atau token autentikasi
             Auth::login($user);
+
             return redirect('dashboard');
         }
 
@@ -48,7 +49,7 @@ class UserController extends Controller
 
         // dd($value);
 
-        // User::create($value);
+        User::create($value);
         return redirect('dashboard');
     }
 

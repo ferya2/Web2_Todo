@@ -11,8 +11,8 @@
 
 <body>
     <div class="container mb-3">
-        <div class="m-3">
-            <a href="/todo/create" class="btn btn-success">Tambah Todo</a>
+        <div class="mt-3 mb-3">
+            <a href="/todo/create" class="btn btn-primary">Tambah Todo</a>
         </div>
         @foreach ($todos as $value)
             <div class="card">

@@ -31,7 +31,7 @@ class UserController extends Controller
             return redirect('dashboard');
         }
 
-        return redirect('dashboard');
+        return redirect('/user/login')->with('error', 'Login Gagal, Periksa Kembali Email dan Password Anda');
     }
 
     public function register(){

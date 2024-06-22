@@ -26,6 +26,15 @@ class TodoController extends Controller
         //             ->get();
         $todos = Todo::join('todo_categories', 'todo_categories.id', '=', 'todos.todo_category_id')
             ->join('users', 'users.id', '=', 'todos.user_id')
+            ->select(
+                'users.*',
+                'todo_categories.*',
+                'todos.id as todo_id',
+                'todos.todo_category_id',
+                'todos.user_id',
+                'todos.title',
+                'todos.description',
+                )
             ->get();
         // dd($todos);
         return view('todo.todo', compact('todos'));
@@ -36,7 +45,7 @@ class TodoController extends Controller
      */
     public function create()
     {
-        $todocategories = TodoCategory::where('user_id', 1)->get();
+        $todocategories = TodoCategory::where('user_id', 5)->get();
         // dd($todocategories); //var_dump(); die;
         return view('todo.create', compact('todocategories'));
     }
@@ -73,7 +82,7 @@ class TodoController extends Controller
     public function edit(string $id)
     {
         $todo = Todo::find($id);
-        // dd($todo);
+        // dd($id,$todo);
         return view('todo.edit', compact('todo'));
     }
 
@@ -85,8 +94,8 @@ class TodoController extends Controller
         // dd($request->all());
 
         $value = [
-            'todo_category_id' => $request->todo_category_id,
-            'user_id' => Auth::user()->id,
+            'todo_category_id' => 1,
+            'user_id' => 5,
             'title' => $request->title,
             'description' => $request->description,
         ];

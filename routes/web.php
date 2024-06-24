@@ -32,6 +32,9 @@ Route::prefix('user')->group(function () {
     Route::post('/logout', [UserController::class, 'logout']);
 });
 
+// Rute resource untuk UserController
+Route::resource('users', UserController::class)->except(['create', 'store']);
+
 Route::prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
 });

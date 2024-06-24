@@ -17,7 +17,7 @@
             <span class="hide-menu">Pengguna</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="/user" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('users.index') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-article"></i>
                 </span>

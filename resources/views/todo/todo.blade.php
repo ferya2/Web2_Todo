@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="mt-3 mb-3">
-        <a href="/todo/create" class="btn btn-success">Tambah Todo</a>
+        <a href="{{ route('todo.create') }}" class="btn btn-success">Tambah Todo</a>
     </div>
     @foreach ($todos as $value)
         <div class="card">
@@ -13,8 +13,12 @@
                 <p>{{ $value->email }}</p>
                 <p>{{ $value->title }}</p>
                 <p>{{ $value->description }}</p>
-                <a href="/todo/edit/{{ $value->todo_id }}" class="btn btn-warning">Ubah</a>
-                <a href="/todo/delete/{{ $value->todo_id }}" class="btn btn-danger">Hapus</a>
+                <a href="{{ route('todo.edit', $value->todo_id) }}" class="btn btn-warning">Ubah</a>
+                <form action="{{ route('todo.destroy', $value->todo_id) }}" method="POST" class="d-inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Hapus</button>
+                </form>
             </div>
         </div>
     @endforeach

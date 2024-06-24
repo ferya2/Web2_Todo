@@ -1,9 +1,8 @@
-</html>
 @extends('layouts.admin.app')
 @section('title', 'Buat Catatan')
 @section('content')
     <div class="container mb-3">
-        <form method="POST" action="/todo/store">
+        <form method="POST" action="{{ route('todo.store') }}"> <!-- Use route helper -->
             @csrf
             <div class="mb-3">
                 <label for="category" class="form-label">Kategori</label>

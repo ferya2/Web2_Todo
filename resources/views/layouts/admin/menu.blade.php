@@ -29,7 +29,7 @@
             <span class="hide-menu">Kategori Catatan</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="/todocategory" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('todo_categories.index') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-article"></i>
                 </span>
@@ -48,5 +48,10 @@
                 <span class="hide-menu">Catatan</span>
             </a>
         </li>
-
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('todo_lists.index') }}" aria-expanded="false">
+                <span><i class="ti ti-article"></i></span>
+                <span class="hide-menu">List Catatan</span>
+            </a>
+        </li>
 </nav>

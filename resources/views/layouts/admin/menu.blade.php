@@ -21,7 +21,7 @@
                 <span>
                     <i class="ti ti-article"></i>
                 </span>
-                <span class="hide-menu">Pengguna</span>
+                <span class="hide-menu">Penggunaa</span>
             </a>
         </li>
         <li class="nav-small-cap">
